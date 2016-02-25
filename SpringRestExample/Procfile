@@ -1,1 +1,1 @@
-web: sh target/SpringRestExample
+web: sh target/SpringRestExample.war
