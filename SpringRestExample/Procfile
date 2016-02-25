@@ -1,1 +1,1 @@
-web: sh bin/target/SpringRestExample
+web: sh target/SpringRestExample
