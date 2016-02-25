@@ -1,1 +1,1 @@
-web: sh target/classes:target/m2e-wtp/
+web: sh target/SpringRestExample
