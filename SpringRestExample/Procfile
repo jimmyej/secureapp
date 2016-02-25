@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -war target/SpringRestExample.war
+web: sh target/SpringRestExample
