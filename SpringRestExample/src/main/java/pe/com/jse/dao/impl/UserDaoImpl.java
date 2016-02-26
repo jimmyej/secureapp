@@ -39,8 +39,7 @@ public class UserDaoImpl implements UserDao {
 		}
 		return tableName;
 	}
-
-	@SuppressWarnings("unchecked")
+	
 	@Override
 	public User getUserInfo(int userId) {
 		//logger.info("Method: "+"getUserInfo");
