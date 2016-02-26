@@ -52,8 +52,7 @@ public class UserDaoImpl implements UserDao {
         //logger.info("Output: "+"getUserInfo");
 		return user;
 	}
-
-	@SuppressWarnings("unchecked")
+	
 	@Override
 	public User getUserByName(String username) {
 		//logger.info("Method: "+"getUserByName");
