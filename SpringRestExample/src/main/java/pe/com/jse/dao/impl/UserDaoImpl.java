@@ -46,7 +46,7 @@ public class UserDaoImpl implements UserDao {
 		//logger.info("Method: "+"getUserInfo");
 		//logger.info("Input: "+"userId= "+userId);
 		
-		String sql = "SELECT * FROM "+getTable("USER")+" WHERE USER_ID = ?";
+		String sql = "SELECT * FROM "+getTable("USER")+" WHERE "+"\""+"USER_ID"+"\""+" = ?";
         User user = (User) jdbcTemplate.queryForObject(sql, new Object[] { userId }, new UserRowMapper());
         
         //logger.info("Output: "+"getUserInfo");
@@ -59,7 +59,7 @@ public class UserDaoImpl implements UserDao {
 		//logger.info("Method: "+"getUserByName");
 		//logger.info("Input: "+"username= "+username);
 		
-		String sql = "SELECT * FROM "+getTable("USER")+" WHERE USERNAME = ?";
+		String sql = "SELECT * FROM "+getTable("USER")+" WHERE "+"\""+"USERNAME"+"\""+" = ?";
         User user = (User) jdbcTemplate.queryForObject(sql, new Object[] { username }, new UserRowMapper());
         
         //logger.info("Output: "+"getUserByName");
@@ -135,7 +135,7 @@ public class UserDaoImpl implements UserDao {
         }
         
 		String sql = "UPDATE "+getTable("USER")+" SET " +
-	            "EMPLOYEE_FLAG=?, USERNAME=?, PASSWORD=?, UPDATED_DATE=?, UPDATED_BY=?, EMAIL=?, ACTIVED=? WHERE USER_ID=?";
+	            "EMPLOYEE_FLAG=?, USERNAME=?, PASSWORD=?, UPDATED_DATE=?, UPDATED_BY=?, EMAIL=?, ACTIVED=? WHERE "+"\""+"USER_ID"+"\""+" =?";
 
 		jdbcTemplate.update(sql, new Object[] { user.isEmployeeFlag(), user.getUsername(), user.getPassword(),
     		user.getUpdatedDate(), user.getUpdatedBy(), user.getEmail(), user.isActived(), user.getUserId()
@@ -150,7 +150,7 @@ public class UserDaoImpl implements UserDao {
 		//logger.info("Method: "+"getUserInfo");
 		//logger.info("Input: "+"userId= "+userId);
 		
-		String sql = "DELETE FROM "+getTable("USER")+" WHERE USER_ID=?";
+		String sql = "DELETE FROM "+getTable("USER")+" WHERE "+"\""+"USER_ID"+"\""+" =?";
 		int row = jdbcTemplate.update(sql, new Object[] { userId });
 		
 		//logger.info("Output: "+row);
