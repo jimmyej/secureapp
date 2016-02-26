@@ -88,6 +88,7 @@ public class UserDaoImpl implements UserDao {
 			user.setActived(Boolean.parseBoolean(String.valueOf("ACTIVED")));
 			users.add(user);
 		}
+        
         //logger.info("Output: "+users);
 		return users;
 	}
