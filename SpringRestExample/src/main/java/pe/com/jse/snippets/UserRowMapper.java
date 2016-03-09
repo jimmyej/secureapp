@@ -15,7 +15,7 @@ public class UserRowMapper implements RowMapper{
 		user.setEmployeeFlag(rs.getBoolean("EMPLOYEE_FLAG"));
 		user.setUsername(rs.getString("USERNAME"));
 		user.setPassword(rs.getString("PASSWORD"));
-		user.setKey(rs.getString("KEY"));
+		user.setKey(rs.getString("KEY_VALUE"));
 		user.setCreatedDate(rs.getDate("CREATED_DATE"));
 		user.setCreatedBy(rs.getString("CREATED_BY"));
 		user.setUpdatedDate(rs.getDate("UPDATED_DATE"));
