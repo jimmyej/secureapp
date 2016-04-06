@@ -5,8 +5,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -21,7 +21,7 @@ import pe.com.jse.util.EncryptDecryptAES;
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {
 
-	private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);//LogManager.getRootLogger();//
+	//private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);//LogManager.getRootLogger();//
 	
 	@Autowired
 	JdbcTemplate jdbcTemplate;
@@ -41,32 +41,32 @@ public class UserDaoImpl implements UserDao {
 	
 	@Override
 	public User getUserInfo(int userId) {
-		logger.info("Method: "+"getUserInfo");
-		logger.info("Input: "+"userId= "+userId);
+//		logger.info("Method: "+"getUserInfo");
+//		logger.info("Input: "+"userId= "+userId);
 		
 		String sql = "SELECT * FROM "+getTable("USER")+" WHERE "+"\""+"USER_ID"+"\""+" = ?";
         User user = (User) jdbcTemplate.queryForObject(sql, new Object[] { userId }, new UserRowMapper());
         
-        logger.info("Output: "+"getUserInfo");
+//        logger.info("Output: "+"getUserInfo");
 		return user;
 	}
 	
 	@Override
 	public User getUserByName(String username) {
-		logger.info("Method: "+"getUserByName");
-		logger.info("Input: "+"username= "+username);
+//		logger.info("Method: "+"getUserByName");
+//		logger.info("Input: "+"username= "+username);
 		
 		String sql = "SELECT * FROM "+getTable("USER")+" WHERE "+"\""+"USERNAME"+"\""+" = ?";
         User user = (User) jdbcTemplate.queryForObject(sql, new Object[] { username }, new UserRowMapper());
         
-        logger.info("Output: "+"getUserByName");
+//        logger.info("Output: "+"getUserByName");
 		return user;
 	}
 	
 	@Override
 	public List<User> getAllUsers() {
-		logger.info("Method: "+"getUserInfo");
-		logger.info("Input: ");
+//		logger.info("Method: "+"getUserInfo");
+//		logger.info("Input: ");
 		
 		String sql = "SELECT * FROM "+getTable("USER");
         List<User> users = new ArrayList<User>();
@@ -87,14 +87,14 @@ public class UserDaoImpl implements UserDao {
 			users.add(user);
 		}
         
-        logger.info("Output: "+users);
+//        logger.info("Output: "+users);
 		return users;
 	}
 
 	@Override
 	public User createUser(User user) {
-		logger.info("Method: "+"getUserInfo");
-		logger.info("Input: "+user);
+//		logger.info("Method: "+"getUserInfo");
+//		logger.info("Input: "+user);
 		
         String sql = "INSERT INTO "+getTable("USER")+" (EMPLOYEE_FLAG, USERNAME, PASSWORD, KEY_VALUE, CREATED_DATE, CREATED_BY, UPDATED_DATE, UPDATED_BY, EMAIL, ACTIVED) VALUES (?,?,?,?,?,?,?,?,?,?)";
         
@@ -110,14 +110,14 @@ public class UserDaoImpl implements UserDao {
     		user.getCreatedDate(), user.getCreatedBy(), user.getUpdatedDate(), user.getUpdatedBy(), user.getEmail(), user.isActived()
         });
         
-        logger.info("Output: "+user);
+//        logger.info("Output: "+user);
 		return user;
 	}
 
 	@Override
 	public User updateUser(User user) {
-		logger.info("Method: "+"getUserInfo");
-		logger.info("Input: "+user);
+//		logger.info("Method: "+"getUserInfo");
+//		logger.info("Input: "+user);
 
 		Calendar cal = Calendar.getInstance();
         user.setUpdatedDate(cal.getTime());
@@ -136,23 +136,20 @@ public class UserDaoImpl implements UserDao {
 		jdbcTemplate.update(sql, new Object[] { user.isEmployeeFlag(), user.getUsername(), user.getPassword(),
     		user.getUpdatedDate(), user.getUpdatedBy(), user.getEmail(), user.isActived(), user.getUserId()
         });
-		
-		logger.info("Output: "+user);
+//		logger.info("Output: "+user);
 		return user;
 	}
 
+	
 	@Override
 	public User deleteUser(int userId) {
-		logger.info("Method: "+"getUserInfo");
-		logger.info("Input: "+"userId= "+userId);
+//		logger.info("Method: "+"getUserInfo");
+//		logger.info("Input: "+"userId= "+userId);
 		
 		String sql = "DELETE FROM "+getTable("USER")+" WHERE "+"\""+"USER_ID"+"\""+" =?";
 		int row = jdbcTemplate.update(sql, new Object[] { userId });
 		
-		logger.info("Output: "+row);
+//		logger.info("Output: "+row);
 		return null;
 	}
-
-
-
 }

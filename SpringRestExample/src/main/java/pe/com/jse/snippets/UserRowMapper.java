@@ -7,9 +7,8 @@ import org.springframework.jdbc.core.RowMapper;
 
 import pe.com.jse.model.User;
 
-@SuppressWarnings("rawtypes")
-public class UserRowMapper implements RowMapper{
-	public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+public class UserRowMapper implements RowMapper<User>{
+	public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 		User user = new User();
 		user.setUserId(rs.getInt("USER_ID"));
 		user.setEmployeeFlag(rs.getBoolean("EMPLOYEE_FLAG"));
