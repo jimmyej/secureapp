@@ -6,6 +6,10 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id="WebApp_ID" version="3.0">
 
     <display-name>SpringRestService</display-name>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
     
    <!--
 		- Location of the XML file that defines the root application context.
@@ -36,7 +40,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
     
     <absolute-ordering/>

@@ -1,7 +1,5 @@
 package pe.com.dev.util;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -43,34 +41,34 @@ public class CommonUtil {
 	public String[] getNewPassValidation(String pass1, String pass2){
 		String[] messages = new String[9];;
 		if (pass1 == null || pass2 == null) {
-			messages[0] = "One or both passwords are null";
+			messages[0] = MSG_PASS_VAL_NULL_VALUE;
 	        return messages;
 	    }
 		if (pass1.isEmpty() || pass2.isEmpty()) {
-			messages[1] = "Empty fields";
+			messages[1] = MSG_PASS_VAL_EMPTY_VALUE;
 	    }
 		
 		if (pass1.equals(pass2)) {
 	        if (pass1.length() < 11) {
-	        	messages[2] = "Password is too short. Needs to have 11 characters";
+	        	messages[2] = MSG_PASS_VAL_SHORT_VALUE;
 	        }
 	        if (!hasUppercase.matcher(pass1).find()) {
-	        	messages[3] = "Password needs an upper case";	
+	        	messages[3] = MSG_PASS_VAL_UPPER_VALUE;	
 	        }
 	        if (!hasLowercase.matcher(pass1).find()) {
-	        	messages[4] = "Password needs a lowercase";
+	        	messages[4] = MSG_PASS_VAL_LOWER_VALUE;
 	        }
 	        if (!hasNumber.matcher(pass1).find()) {
-	        	messages[5] = "Password needs a number";
+	        	messages[5] = MSG_PASS_VAL_NUMBER_VALUE;
 	        }
 	        if (!hasSpecialChar.matcher(pass1).find()) {
-	        	messages[6] = "Password needs a special character i.e. !,@,#, etc.";
+	        	messages[6] = MSG_PASS_VAL_SPECIAL_VALUE;
 	        }
 	    } else {
-	    	messages[7] = "Passwords don't match";
+	    	messages[7] = MSG_PASS_VAL_NOMATCH_VALUE;
 	    }
 	    if (messages.length == 0) {
-	    	messages[8] = "Success";
+	    	messages[8] = MSG_PASS_VAL_SUCCESS_VALUE;
 	    }
 	    
 		return messages;

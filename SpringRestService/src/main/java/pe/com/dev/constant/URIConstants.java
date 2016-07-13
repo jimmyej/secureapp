@@ -29,4 +29,11 @@ public class URIConstants {
     public static final String CREATE_USER = "/rest/user/create";
     public static final String UPDATE_USER = "/rest/user/update";
     public static final String DELETE_USER = "/rest/user/delete/{id}";
+    
+    public static final String GET_ROLE_INFO = "/rest/role/byid/{id}";
+    public static final String GET_ALL_ROLE = "/rest/roles";
+    public static final String GET_ROLES_BY_USER = "/rest/roles/byname/{name}";
+    public static final String CREATE_ROLE = "/rest/role/create";
+    public static final String UPDATE_ROLE = "/rest/role/update";
+    public static final String DELETE_ROLE = "/rest/role/delete/{id}";
 }

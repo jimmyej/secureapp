@@ -20,9 +20,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import pe.com.dev.constant.URIConstants;
 
-@Controller("sendMailController")
+//@Controller("sendMailController")
 public class SendMailController {
-	
+	/*
 	@Autowired
 	//private MailSender mailSender;
 	private JavaMailSenderImpl mailSender;
@@ -81,5 +81,5 @@ public class SendMailController {
 			e.printStackTrace();
 		}
         return convFile;
-	}
+	}*/
 }
