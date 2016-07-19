@@ -9,6 +9,7 @@ public interface RoleService {
 	public List<Role> RoleList();
 	public List<Role> RoleListByUser(String username);
 	public int createRole(Role role);
+	public int createRoleByUser(String username, String rolename);
 	public int modifyRole(Role role);
 	public int removeRole(int roleId);
 }

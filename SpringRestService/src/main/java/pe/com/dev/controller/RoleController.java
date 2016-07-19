@@ -25,4 +25,8 @@ public class RoleController {
         result = service.RoleListByUser(username);
         return result;
 	}
+	@RequestMapping(value = URIConstants.ADD_ROLE_BY_ID, method = RequestMethod.GET)
+	public @ResponseBody int addRoleByUser(@PathVariable("username") String username, @PathVariable("rolename") String rolename) { 
+        return service.createRoleByUser(username, rolename);
+	}
 }

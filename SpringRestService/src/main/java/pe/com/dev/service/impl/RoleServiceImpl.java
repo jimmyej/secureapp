@@ -50,4 +50,9 @@ public class RoleServiceImpl implements RoleService {
 		return 0;
 	}
 
+	@Override
+	public int createRoleByUser(String username, String rolename) {
+		return dao.addRoleByUser(username, rolename);
+	}
+
 }

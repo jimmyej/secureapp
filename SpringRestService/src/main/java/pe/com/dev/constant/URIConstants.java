@@ -36,4 +36,5 @@ public class URIConstants {
     public static final String CREATE_ROLE = "/rest/role/create";
     public static final String UPDATE_ROLE = "/rest/role/update";
     public static final String DELETE_ROLE = "/rest/role/delete/{id}";
+    public static final String ADD_ROLE_BY_ID = "/rest/role/add/byuser/{username}/{rolename}";
 }

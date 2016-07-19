@@ -73,4 +73,14 @@ public class RoleDaoImpl implements RoleDao {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public int addRoleByUser(String username, String rolename) {
+		Map<String, Object> inParams = new HashMap<String, Object>();
+		inParams.put("USER_NAME_X", username);
+		inParams.put("ROLE_NAME_X", rolename);
+		Map<String, Object> data = exec.execute("SP_ADD_ROLE_BY_USER", inParams);
+		System.out.println(data);
+		return 0;
+	}
 }

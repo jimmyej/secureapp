@@ -1,24 +1,24 @@
 package pe.com.dev.controller;
 
-import java.io.File;
-import java.io.IOException;
-
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.FileSystemResource;
+//import java.io.File;
+//import java.io.IOException;
+//
+//import javax.mail.MessagingException;
+//import javax.mail.internet.MimeMessage;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.core.io.FileSystemResource;
 //import org.springframework.mail.MailSender;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
-import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartFile;
-
-import pe.com.dev.constant.URIConstants;
+//import org.springframework.mail.SimpleMailMessage;
+//import org.springframework.mail.javamail.JavaMailSenderImpl;
+//import org.springframework.mail.javamail.MimeMessageHelper;
+//import org.springframework.stereotype.Controller;
+//import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RequestMethod;
+//import org.springframework.web.multipart.MultipartFile;
+//
+//import pe.com.dev.constant.URIConstants;
 
 //@Controller("sendMailController")
 public class SendMailController {
