@@ -34,7 +34,7 @@
 
 		<!-- Others -->
 		<org.aspectj-version>1.7.4</org.aspectj-version>
-		<jackson.databind-version>2.2.3</jackson.databind-version>
+		<jackson.databind-version>2.12.7.1</jackson.databind-version>
 		
 
 	</properties>
